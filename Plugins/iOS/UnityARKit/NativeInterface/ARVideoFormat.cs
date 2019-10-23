@@ -15,7 +15,7 @@ namespace UnityEngine.XR.iOS
 		public float imageResolutionHeight;
 		public int framesPerSecond;
 
-		#if UNITY_EDITOR
+		#if UNITY_EDITOR || !UNITY_IOS
 		private static void EnumerateVideoFormats(VideoFormatEnumerator videoFormatEnumerator) 
 		{
 		}
