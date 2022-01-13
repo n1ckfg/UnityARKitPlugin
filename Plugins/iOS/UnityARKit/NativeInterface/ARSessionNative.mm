@@ -784,7 +784,7 @@ extern "C" void session_SetPlaneAnchorCallbacks(const void* session, UNITY_AR_AN
     anchorCallbacks->_anchorAddedCallback = anchorAddedCallback;
     anchorCallbacks->_anchorUpdatedCallback = anchorUpdatedCallback;
     anchorCallbacks->_anchorRemovedCallback = anchorRemovedCallback;
-    [nativeSession->_classToCallbackMap setObject:anchorCallbacks forKey:[ARPlaneAnchor class]];
+    [nativeSession->_classToCallbackMap setObject:anchorCallbacks forKey: (id<NSCopying>)[ARPlaneAnchor class]];
 }
 
 extern "C" void session_SetUserAnchorCallbacks(const void* session, UNITY_AR_USER_ANCHOR_CALLBACK userAnchorAddedCallback, 
@@ -796,7 +796,7 @@ extern "C" void session_SetUserAnchorCallbacks(const void* session, UNITY_AR_USE
     userAnchorCallbacks->_anchorAddedCallback = userAnchorAddedCallback;
     userAnchorCallbacks->_anchorUpdatedCallback = userAnchorUpdatedCallback;
     userAnchorCallbacks->_anchorRemovedCallback = userAnchorRemovedCallback;
-    [nativeSession->_classToCallbackMap setObject:userAnchorCallbacks forKey:[ARAnchor class]];
+    [nativeSession->_classToCallbackMap setObject:userAnchorCallbacks forKey: (id<NSCopying>)[ARAnchor class]];
 }
 
 extern "C" void session_SetFaceAnchorCallbacks(const void* session, UNITY_AR_FACE_ANCHOR_CALLBACK faceAnchorAddedCallback,
@@ -809,7 +809,7 @@ extern "C" void session_SetFaceAnchorCallbacks(const void* session, UNITY_AR_FAC
     faceAnchorCallbacks->_anchorAddedCallback = faceAnchorAddedCallback;
     faceAnchorCallbacks->_anchorUpdatedCallback = faceAnchorUpdatedCallback;
     faceAnchorCallbacks->_anchorRemovedCallback = faceAnchorRemovedCallback;
-    [nativeSession->_classToCallbackMap setObject:faceAnchorCallbacks forKey:[ARFaceAnchor class]];
+    [nativeSession->_classToCallbackMap setObject:faceAnchorCallbacks forKey: (id<NSCopying>)[ARFaceAnchor class]];
 #endif
 }
 
@@ -824,7 +824,7 @@ extern "C" void session_SetImageAnchorCallbacks(const void* session, UNITY_AR_IM
         imageAnchorCallbacks->_anchorAddedCallback = imageAnchorAddedCallback;
         imageAnchorCallbacks->_anchorUpdatedCallback = imageAnchorUpdatedCallback;
         imageAnchorCallbacks->_anchorRemovedCallback = imageAnchorRemovedCallback;
-        [nativeSession->_classToCallbackMap setObject:imageAnchorCallbacks forKey:[ARImageAnchor class]];
+        [nativeSession->_classToCallbackMap setObject:imageAnchorCallbacks forKey: (id<NSCopying>)[ARImageAnchor class]];
     }
 }
 

@@ -109,7 +109,7 @@ extern "C" void session_SetObjectAnchorCallbacks(const void* session, UNITY_AR_O
         objectAnchorCallbacks->_anchorRemovedCallback = objectAnchorRemovedCallback;
         if (@available(iOS 12.0, *))
         {
-            [nativeSession->_classToCallbackMap setObject:objectAnchorCallbacks forKey:[ARObjectAnchor class]];
+            [nativeSession->_classToCallbackMap setObject:objectAnchorCallbacks forKey: (id<NSCopying>)[ARObjectAnchor class]];
         }
     }
 }

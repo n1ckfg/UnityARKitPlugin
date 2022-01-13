@@ -162,7 +162,7 @@ extern "C" void session_SetEnvironmentProbeAnchorCallbacks(const void* session, 
         envProbeAnchorCallbacks->_anchorUpdatedCallback = envProbeAnchorUpdatedCallback;
         envProbeAnchorCallbacks->_anchorRemovedCallback = envProbeAnchorRemovedCallback;
         if (@available(iOS 12.0, *)) {
-            [nativeSession->_classToCallbackMap setObject:envProbeAnchorCallbacks forKey:[AREnvironmentProbeAnchor class]];
+            [nativeSession->_classToCallbackMap setObject:envProbeAnchorCallbacks forKey: (id<NSCopying>)[AREnvironmentProbeAnchor class]];
         } 
     }
 }
